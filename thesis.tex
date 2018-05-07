@@ -1,0 +1,170 @@
+\documentclass[18pt]{article}  
+\usepackage{latexsym}  
+\usepackage[fleqn]{amsmath}  
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{xeCJK}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{geometry}
+\geometry{left=3.0cm,right=3.0cm,top=2.5cm,bottom=2.5cm}
+\begin{document}
+\title{复变函数引论思考题}  
+\author { 林祺安 \\  
+	机械工程系 \\}  
+\date{\today}  
+\maketitle
+\section{} 设$f(z)=z^{n}+\sum\nolimits_{k=1}^{n}c_{k}z^{n-k}$。证明：$f(z)$为分圆多项式的充要条件是$f(z)$的n个零点为圆内接正n边形的n个顶点。\\
+
+
+\begin{itemize}
+\item 法一
+\end{itemize}
+
+\textbf{充分性:}\\
+$\mbox{对分圆多项式} f(z)=z^{n}+c_{n} \text{,令} f(z)=0 \text{，则可得} f(z) \text{的零点为\\}
+z=z_{k}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}},k=1,2,\cdots,n$\\
+易知
+\begin{flalign*}
+|z_{k}| & =\sqrt{z_{K}\cdot \overline{z_{k}}}\\
+&=\sqrt{|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}}\cdot |c_{n}|^{\frac{1}{n}}\cdot e^{-i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}}}\\
+&=|c_{n}|^{\frac{1}{n}}
+\end{flalign*}
+这n个零点全部在以原点为圆心，半径为$|c_{n}|^{\frac{1}{n}}$的圆上。即这n个零点构成一个圆内接n边形。
+\begin{align*}
+\therefore z_{k+1}-z_{k} &=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2k\pi}{n}}-|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \\
+&=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \cdot (e^{\frac{2\pi}{n}}-1)
+\end{align*}
+\begin{align*}
+\therefore |z_{k+1}-z_{k}|^{2} &=|c_{n}|^{\frac{2}{n}} \cdot (e^{\frac{2\pi}{n}}-1)^{2} \cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \cdot e^{-i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \\
+&=|c_{n}|^{\frac{2}{n}} \cdot (e^{\frac{2\pi}{n}}-1)^{2}, k=1,2,\dots ,n
+\end{align*}
+（定义$z_{n+1}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})}{n}}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}}=z_{1}$）\\
+$\therefore$ $f(z)$的n个零点构成的n边形的边长均相等\\
+又 $\because$ 此n边形为圆内接n边形\\
+$\therefore$ $f(z)$的n个零点构成一个正n边形\\
+\\
+\textbf{必要性：}\\
+对正n边形的n个顶点\\
+$z=z_{k}=r\cdot e^{i \cdot (\alpha_{0}+ \frac{2(k-1)\pi}{n})}, k=1,2,\cdots, n$\\
+有$z_{k}^{n}=r^{n}\cdot e^{i\cdot(n\alpha_{0}+2(k-1)\pi)}, \forall k=1,2,\cdots,n$\\
+$\therefore z_{1},z{2},\cdots,z_{n}$均为首一多项式$f(z)=z^{n}-r^{n}\cdots e^{in\alpha_{0}}$的零点\\
+又 $z_{1},z_{2},\cdots,z_{n}$互不相等，$degf(z)=n$\\
+$\therefore z_{1},z_{2},\cdots,z_{n}$为$f(z)$的全部零点\\
+又 $\because f(z)$为首一多项式
+$\therefore f(z)=\prod_{k=1}^{n}(z-z_{k})$\\
+所以有$f(z)=\prod_{k=1}^{n}(z-z_{k})=z^{n}-r^{n}\cdots e^{in\alpha_{0}}$ \quad \rule{3mm}{3mm}\\
+\\
+\\
+\\
+\begin{itemize}
+	\item 法二
+\end{itemize}
+\textbf{充分性：}\\
+当$f(z)$为分圆多项式时，有$f(z)=z^{n}+c_{n}$\\
+其零点为$z=z_{k}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}},k=1,2,\cdots,n$\\
+\begin{align*}
+\therefore z_{k+1}-z_{k} &=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2k\pi}{n}}-|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \\
+&=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \cdot (e^{\frac{2\pi}{n}}-1)
+\end{align*}\\
+同理，
+\begin{align*}
+z_{k+2}-z_{k+1}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2k\pi}{n}} \cdot (e^{\frac{2\pi}{n}}-1)
+\end{align*}
+（定义$z_{n+t}=z_{t},\forall t \in \mathbb{Z}$）
+\begin{align*}
+	arg(z_{k+2}-z_{k+1})-arg(z_{k+1}-z_{k})&=\frac{1}{n}\cdot (arg(-c_{n})+2k\pi)-\frac{1}{n}\cdot (arg(-c_{n})+2(k-1)\pi)\\
+	&=\frac{2\pi}{n}
+\end{align*}
+故相邻边夹角为$\pi-\frac{2\pi}{n}=\frac{n-2}{n}\pi$为常数\\
+所以\quad$z_{1},z_{2},\cdots,z_{n}$构成的n边形各个顶角相等\\
+又\quad 此n边形为圆内接n边形\\
+所以 $z_{1},z_{2},\cdots,z_{n}$构成正n边形\\
+\\
+\textbf{必要性：}\\
+对正n边形的n个顶点，以正n边形中心为原点，有
+$z_{k+1}=z_{k}\cdot e^{\frac{2\pi}{n}i},k=1,2,\cdots,n$\\
+（定义$z_{n+1}=z_{1}$）
+$\therefore z_{k+1}^{n}=z_{k}^{n}\cdot e^{2\pi i}=z_{k}^{n},\forall k=1,2,\cdots,n$\\
+$\therefore z_{k}^{n}=z_{1}^{n},\forall k=1,2,\cdots,n$\\
+令$f(z)=z^{n}-z_{1}^{n}$为分圆多项式，则$z_{1},z_{2},\cdots,z_{n}$互不相同，且皆为$f(z)$的零点\\
+又\quad $degf(z)=n$\\
+$\therefore z_{1},z_{2},\cdots,z_{n}$为$f(z)$的全部零点\\
+$\therefore f(z)=\prod_{k=1}^{n}(z-z_{k})=z^{n}-z_{1}^{n}$ \quad \rule{3mm}{3mm}\\
+
+\section{}
+证明：$\zeta(2n)=c_{n}\zeta^{n}(2)=c_{n}(\frac{\pi^2}{6})^{n},\quad c_{1}=1\\
+(n+\frac{1}{2})c_{n}=\sum\limits_{k=1}^{n-1}c_{k}c_{n-k},\quad n \geq 2$\\
+\\
+由于$ln(\frac{sinz}{z})=\sum\limits_{n=1}^{+\infty}ln(1-\frac{z^2}{n^2 \pi^2})$，由Taylor展开，
+\begin{equation}
+\begin{split}
+	ln\frac{sinz}{z} &=\sum\limits_{n=1}^{+\infty} \sum\limits_{k=1}^{+\infty} \frac{(-1)^{k-1} \cdot (-z^2)^k}{k \cdot (n^2 \pi^2)^k}\\
+					 &=-\sum\limits_{k=1}^{+\infty} \frac{z^{2k}}{k \pi^{2k}} \sum\limits_{n=1}^{+\infty} \frac{1}{n^{2k}}\\
+					 &=-\sum\limits_{k=1}^{+\infty} \frac{z^{2k}}{k \pi^{2k}} \cdot \zeta(2k) \label{basic}
+\end{split}
+\end{equation}
+对上式求导得，
+$cotz-\frac{1}{z}=\sum\limits_{k=1}^{+\infty}\frac{-2}{\pi^{2k}}\zeta(2k)\cdot z^{2k-1}$\\
+故有\begin{equation}
+	zcotz-1=-2\sum\limits_{k=1}^{+\infty}\frac{1}{\pi^{2k}}\zeta(2k) \cdot z^{2k} \label{use_in_3}
+\end{equation}
+用$\pi z$代替$z$，有
+$cot(\pi z)-\frac{1}{\pi z}=-2 \sum\limits_{k=1}^{+\infty}\zeta(2k)\cdot z^{2k-1} \cdot \pi^{-1}$\\
+所以有
+\begin{equation}
+	\pi z \cdot cot(\pi z)-1=-2 \sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k}\label{general}
+\end{equation}
+对\eqref{general}求导得，$\pi cot(\pi z)+\pi z \cdot [cot(\pi z)]'=-2\sum\limits_{k=1}^{+\infty} 2n \cdot \zeta(2k) \cdot z^{2k-1}$ \\
+又 $\because \quad [cot(\pi z)]'=\pi(-1-cot^2(\pi z))$ \\
+$\therefore \pi cot(\pi z)+\pi^2 z \cdot cot'(\pi z)= \pi cot(\pi z)-\pi^2 z-\frac{1}{z} \cdot (\pi z \cdot cot(\pi z))^2$\\
+将\eqref{general}代入上式可得,\\
+$-2\sum\limits_{k=1}^{+\infty} 2n \cdot \zeta(2k) \cdot z^{2k-1}=\frac{1}{z} [-2\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k}+1]-\pi^2 z-\frac{1}{z} \cdot [-2\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k}+1]^2$\\
+所以有
+\begin{align*}
+	2\sum\limits_{k=1}^{+\infty}(2n-1)\cdot \zeta(2k) \cdot z^{2k}+1 &=\pi^2 z^2+[-2\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k}+1]^2\\
+	&=\pi^2 z^2+4(\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k})^2-4\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k}+1
+\end{align*}
+整理得，
+\begin{equation}
+	\begin{split}
+		\sum\limits_{k=1}^{+\infty}(2n+1)\cdot \zeta(2k) \cdot z^{2k-1} &=2(\sum\limits_{k=1}^{+\infty}\zeta(2k) \cdot z^{2k})^2+\pi^2 z^2 \\
+		&=2\sum\limits_{n=1}^{+\infty}\sum\limits_{k=1}^{n-1}\zeta(2k)\cdot\zeta(2n-2k) z^{2n}+\pi^2 z^2 \label{final}
+	\end{split}
+\end{equation}
+比较等式\eqref{final}两边$2n(n\geq2)$次项的系数，有\\
+$(2n+1)\zeta(2n)=2\sum\limits_{k=1}^{n-1}\zeta(2k)\cdot\zeta(2n-2k)$\\
+又 \quad$c_{n}=\frac{\zeta(2n)}{\zeta^n(2)}$\\
+$\therefore (n+\frac{1}{2})c_{n}=\sum\limits_{k=1}^{n-1}c_{k}\cdot c_{n-k}$ \quad \rule{3mm}{3mm}\\
+\\
+\\
+\\
+\section{}
+证明：$\frac{\zeta(2n)}{\pi^{2n}}-\frac{\zeta(2n-2)}{3!\pi^{2n-2}}+\frac{\zeta(2n-4)}{5!\pi^{2n-4}}+ \cdots+(-1)^(n-1)\frac{\zeta(2)}{\pi^{2}}+\frac{(-1)^n n}{(2n+1)!}=0, \quad n\in mathbb{N}$\\
+将式\eqref{use_in_3}两边同乘以$sinz$得：
+\begin{equation}
+\begin{split}
+	zcosz-sinz &=-2sinz(\sum\limits_{k=1}^{+\infty}\frac{1}{\pi^{2k}}\zeta(2k) \cdot z^{2k})\\
+			   &=-2(\sum\limits_{k=1}^{+\infty})(\sum\limits_{k=1}^{+\infty}\frac{1}{\pi^{2k}}\zeta(2k) \cdot z^{2k})\\
+			   &=-2\sum\limits_{n=1}^{+\infty} \sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) z^{2n+1}
+			   \label{fisrt}
+\end{split}
+\end{equation}
+而
+\begin{equation}
+\begin{split}
+	zcosz-sinz &=z(\sum\limits_{n=0}^{+\infty} \frac{(-1)^n z^{2n}}{(2n)!}) -\sum\limits_{k=1}^{+\infty}\frac{(-1)^{k-1}z^{2k-1}}{(2k-1)!}\label{second}\\
+			   &=(\sum\limits_{n=1}^{+\infty}\frac{(-1)^n}{(2n)!} - \sum\limits_{n=1}^{+\infty} \frac{(-1)^n}{(2n+1)!})z^{2n+1}
+\end{split}
+\end{equation}
+比较式\eqref{fisrt}和式\eqref{second}，可以得到
+\begin{equation}
+	-2\sum\limits_{n=1}^{+\infty} \sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) z^{2n+1}=(\sum\limits_{n=1}^{+\infty}\frac{(-1)^n}{(2n)!}  \frac{(-1)^n}{(2n+1)!})z^{2n+1} \label{final3}
+\end{equation}
+比较式\eqref{final3}两端的2n+1次项系数，可得
+\begin{align*}
+-2\sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) &= \frac{(-1)^n}{(2n)!}  \frac{(-1)^n}{(2n+1)!} \\
+     &= \frac{(-1)^n \cdot 2n}{(2n+1)!}
+\end{align*}
+整理得，$\sum\limits_{k=0}^{n-1} \frac{(-1)^k \zeta(2n-2k)}{(2k+1)! \pi^(2n-2k)} + \frac{(-1)^n \cdot n}{(2n+1)!} =0$ \quad \rule{3mm}{3mm}\\
+\end{document}
