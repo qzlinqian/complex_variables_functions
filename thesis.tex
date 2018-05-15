@@ -39,7 +39,7 @@ z=z_{k}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}},k=1
 \therefore |z_{k+1}-z_{k}|^{2} &=|c_{n}|^{\frac{2}{n}} \cdot (e^{\frac{2\pi}{n}}-1)^{2} \cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \cdot e^{-i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}} \\
 &=|c_{n}|^{\frac{2}{n}} \cdot (e^{\frac{2\pi}{n}}-1)^{2}, k=1,2,\dots ,n
 \end{align*}
-（定义$z_{n+1}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})}{n}}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2(k-1)\pi}{n}}=z_{1}$）\\
+（定义$z_{n+1}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})+2n\pi}{n}}=|c_{n}|^{\frac{1}{n}}\cdot e^{i\cdot\frac{arg(-c_{n})}{n}}=z_{1}$）\\
 $\therefore$ $f(z)$的n个零点构成的n边形的边长均相等\\
 又 $\because$ 此n边形为圆内接n边形\\
 $\therefore$ $f(z)$的n个零点构成一个正n边形\\
@@ -47,13 +47,13 @@ $\therefore$ $f(z)$的n个零点构成一个正n边形\\
 \textbf{必要性：}\\
 对正n边形的n个顶点\\
 $z=z_{k}=r\cdot e^{i \cdot (\alpha_{0}+ \frac{2(k-1)\pi}{n})}, k=1,2,\cdots, n$\\
-有$z_{k}^{n}=r^{n}\cdot e^{i\cdot(n\alpha_{0}+2(k-1)\pi)}, \forall k=1,2,\cdots,n$\\
-$\therefore z_{1},z{2},\cdots,z_{n}$均为首一多项式$f(z)=z^{n}-r^{n}\cdots e^{in\alpha_{0}}$的零点\\
+有$z_{k}^{n}=r^{n}\cdot e^{i\cdot(n\alpha_{0}+2(k-1)\pi)} = r^{n} \cdot e^{i\cdot n\alpha_{0}}, \forall k=1,2,\cdots,n$\\
+$\therefore z_{1},z{2},\cdots,z_{n}$ 均为首一多项式 $f(z)=z^{n}-r^{n}\cdot e^{in\alpha_{0}}$ 的零点\\
 又 $z_{1},z_{2},\cdots,z_{n}$互不相等，$degf(z)=n$\\
 $\therefore z_{1},z_{2},\cdots,z_{n}$为$f(z)$的全部零点\\
 又 $\because f(z)$为首一多项式
 $\therefore f(z)=\prod_{k=1}^{n}(z-z_{k})$\\
-所以有$f(z)=\prod_{k=1}^{n}(z-z_{k})=z^{n}-r^{n}\cdots e^{in\alpha_{0}}$ \quad \rule{3mm}{3mm}\\
+所以有$f(z)=\prod_{k=1}^{n}(z-z_{k})=z^{n}-r^{n}\cdot e^{in\alpha_{0}}$ \quad \rule{3mm}{3mm}\\
 \\
 \\
 \\
@@ -135,12 +135,12 @@ $-2\sum\limits_{k=1}^{+\infty} 2n \cdot \zeta(2k) \cdot z^{2k-1}=\frac{1}{z} [-2
 比较等式\eqref{final}两边$2n(n\geq2)$次项的系数，有\\
 $(2n+1)\zeta(2n)=2\sum\limits_{k=1}^{n-1}\zeta(2k)\cdot\zeta(2n-2k)$\\
 又 \quad$c_{n}=\frac{\zeta(2n)}{\zeta^n(2)}$\\
-$\therefore (n+\frac{1}{2})c_{n}=\sum\limits_{k=1}^{n-1}c_{k}\cdot c_{n-k}$ \quad \rule{3mm}{3mm}\\
+$\therefore \text{两边同时除以} \zeta^n(2)  \text{得：} (n+\frac{1}{2})c_{n} = \sum\limits_{k=1}^{n-1} c_{k} \cdot c_{n-k}$ \quad \rule{3mm}{3mm}\\
 \\
 \\
 \\
 \section{}
-证明：$\frac{\zeta(2n)}{\pi^{2n}}-\frac{\zeta(2n-2)}{3!\pi^{2n-2}}+\frac{\zeta(2n-4)}{5!\pi^{2n-4}}+ \cdots+(-1)^(n-1)\frac{\zeta(2)}{\pi^{2}}+\frac{(-1)^n n}{(2n+1)!}=0, \quad n\in mathbb{N}$\\
+证明：$\frac{\zeta(2n)}{\pi^{2n}}-\frac{\zeta(2n-2)}{3!\pi^{2n-2}}+\frac{\zeta(2n-4)}{5!\pi^{2n-4}}+ \cdots+(-1)^(n-1)\frac{\zeta(2)}{\pi^{2}}+\frac{(-1)^n n}{(2n+1)!}=0, \quad n\in  \mathbb{N}$\\
 将式\eqref{use_in_3}两边同乘以$sinz$得：
 \begin{equation}
 \begin{split}
@@ -162,9 +162,8 @@ $\therefore (n+\frac{1}{2})c_{n}=\sum\limits_{k=1}^{n-1}c_{k}\cdot c_{n-k}$ \qua
 	-2\sum\limits_{n=1}^{+\infty} \sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) z^{2n+1}=(\sum\limits_{n=1}^{+\infty}\frac{(-1)^n}{(2n)!}  \frac{(-1)^n}{(2n+1)!})z^{2n+1} \label{final3}
 \end{equation}
 比较式\eqref{final3}两端的2n+1次项系数，可得
-\begin{align*}
--2\sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) &= \frac{(-1)^n}{(2n)!}  \frac{(-1)^n}{(2n+1)!} \\
-     &= \frac{(-1)^n \cdot 2n}{(2n+1)!}
-\end{align*}
+\begin{equation}
+-2\sum\limits_{k=1}^{n} \frac{(-1)^{n-k}}{\pi^{2k} \cdot (2n-2k+1)!} \zeta(2k) = \frac{(-1)^n}{(2n)!}  \frac{(-1)^n}{(2n+1)!} = \frac{(-1)^n \cdot 2n}{(2n+1)!}
+\end{equation}
 整理得，$\sum\limits_{k=0}^{n-1} \frac{(-1)^k \zeta(2n-2k)}{(2k+1)! \pi^(2n-2k)} + \frac{(-1)^n \cdot n}{(2n+1)!} =0$ \quad \rule{3mm}{3mm}\\
 \end{document}
